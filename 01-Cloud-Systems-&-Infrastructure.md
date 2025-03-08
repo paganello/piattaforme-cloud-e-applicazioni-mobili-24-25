@@ -150,7 +150,7 @@ Per ottimizzare i costi nel cloud, il documento suggerisce di sfruttare i vantag
 
 ## 1.6 - AWS (Amazon Web Services)
 
-Amazon Web Services è presentato come una piattaforma di servizi cloud sicura che offre potenza di elaborazione, storage di database, distribuzione di contenuti e altre funzionalità per aiutare le imprese a ricalibrare le proprie risorse e crescere.
+Amazon Web Services è una piattaforma di servizi cloud sicura che offre potenza di elaborazione, storage di database, distribuzione di contenuti e altre funzionalità per aiutare le imprese a ricalibrare le proprie risorse e crescere.
 
 ### Struttura Geografica di AWS
 
@@ -163,8 +163,6 @@ Amazon Web Services è presentato come una piattaforma di servizi cloud sicura c
    - Consente di posizionare risorse in location multiple per maggiore resilienza
 
 ### Principali Servizi AWS
-
-Il documento menziona numerosi servizi AWS tra cui:
 - **S3** (Simple Storage Service)
 - **EC2** (Elastic Compute Cloud)
 - **EMR** (Elastic MapReduce)
@@ -192,9 +190,6 @@ Il documento menziona numerosi servizi AWS tra cui:
 - **Vantaggi**: Esegue automaticamente tutto lo scaling e il provisioning necessario del cluster
 
 ## 1.7 - Micro-servizi
-
-### Contesto
-
 I micro-servizi emergono come risposta a sfide di:
 - Manutenibilità
 - Monitoring
@@ -205,11 +200,9 @@ I micro-servizi emergono come risposta a sfide di:
 ### Definizione di Micro-servizi
 
 Secondo James Lewis e Martin Fowler:
-"Scomposizione funzionale del sistema in componenti gestibili e implementabili in modo indipendente"
+"Scomposizione funzionale del sistema in componenti gestibili e implementabili in modo indipendente". 
+Scompongo i sistemi complessi e monolitici in componenti fanno cose completamente differenti e separate, il fatto che siano cose scomposte mi permette di implementare solo cio che mi serve veramente. cio mi permette anche di creare le componenti in linguaggi di programmazione differenti, che siano piu addatti a cio che la componente dovrà fare.
 
-### Architettura Tradizionale vs Micro-servizi
-
-Il documento evidenzia che non si tratta di una scelta binaria tra monoliti e micro-servizi, ma di un continuum con molti sistemi che ricadono in un'area di confine.
 
 ### Caratteristiche dei Micro-servizi
 
@@ -218,18 +211,12 @@ Il documento evidenzia che non si tratta di una scelta binaria tra monoliti e mi
 3. **Organizzazione attorno alle capacità di business**: allineamento con le esigenze aziendali
 4. **Decentralizzazione**: distribuzione della responsabilità
 
-### Evoluzione dell'Architettura
 
-- **App Monolitica**: scritta in un unico linguaggio (es. C++), con architettura a livelli (MVC pattern)
-- **Micro-servizi Poliglotti**: mix di linguaggi diversi, più adattabili ai diversi requisiti
+## 1.8 - Docker
 
-## Docker
+Soluzione al problema del "run anywhere" (esecuzione ovunque) utilizzando container Linux. Mi permette di creare ambienti isolati, permettendo che la coesistenza di piu ambienti (anche incompatibili) sulla stessa macchina e sullo stesso OS.
 
-Docker viene presentato come una soluzione al problema del "run anywhere" (esecuzione ovunque) utilizzando container Linux.
-
-### Problema che Docker Risolve
-
-Il documento illustra il problema della differenza tra ambienti di sviluppo e produzione, che può causare conflitti di dipendenze e versioni. Docker risolve questo problema incapsulando applicazioni e dipendenze in container isolati.
+Il problema della differenza tra ambienti di sviluppo e produzione, può causare conflitti di dipendenze e versioni. Docker risolve questo problema incapsulando applicazioni e dipendenze in container isolati.
 
 ### Vantaggi di Docker
 
