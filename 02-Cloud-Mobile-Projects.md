@@ -18,37 +18,35 @@ I problemi comuni nella distribuzione del software includono diagnosi dei bug tr
 
 DevOps è la pratica in cui ingegneri operativi e sviluppatori collaborano durante l'intero ciclo di vita del servizio, dalla progettazione attraverso il processo di sviluppo fino al supporto in produzione. Rappresenta la fusione dei ruoli di Sviluppo e Operations.
 
-### Valori Fondamentali (CAMS)
+#### Valori Fondamentali (CAMS)
 
 Il modello DevOps si basa su quattro valori fondamentali, noti come CAMS: Cultura (persone, processi e strumenti), Automazione (infrastruttura come codice), Misurazione (misurare tutto) e Condivisione (collaborazione e feedback).
 
-### Pilastri del DevOps
+#### Pilastri del DevOps
 
 DevOps si fonda su tre pilastri essenziali: automazione dell'infrastruttura, consegna continua e ingegneria dell'affidabilità. Questi elementi costituiscono la base per un'implementazione efficace delle pratiche DevOps.
 
-### Infrastruttura come Codice
+#### Infrastruttura come Codice
 
 Il processo di sviluppo nell'infrastruttura come codice segue un flusso logico che parte dalla scrittura del codice, passa attraverso la validazione e i test unitari, prosegue con la costruzione di un artefatto, il suo deployment in ambiente di test, i test di integrazione e infine il deployment dell'artefatto in produzione.
 
-### Continuous Delivery
-
-La consegna continua comprende tre fasi principali: integrazione (CI) che include build e test, deployment (CD) che comprende deploy e test di integrazione, e infine delivery che estende il processo fino alla produzione.
-
-### Best Practice
+#### Best Practice
 
 Le migliori pratiche nel DevOps includono build veloci che passino il "test del caffè" (meno di 5 minuti), commit di piccole dimensioni, mantenere sempre la build funzionante, utilizzare un flusso di sviluppo basato su trunk/master, evitare test instabili e assicurarsi che ogni build restituisca uno stato (log) e un artefatto.
 
-### Strumenti
+#### Strumenti
 
 L'ecosistema DevOps utilizza vari strumenti come sistemi di controllo versione (Git, GitHub, CodeCommit), sistemi CI (Jenkins, Bamboo), strumenti di build (make, maven), framework di test, repository per artefatti (Artifactory, Dockerhub) e strumenti di deployment.
 
-### CI/CD
+#### CI/CD
 
 Il Continuous Integration è la pratica di unire costantemente il lavoro di sviluppo con il ramo principale. Il Continuous Delivery riguarda la consegna continua di codice a un ambiente quando è pronto, sia esso staging o produzione. Il Continuous Deployment si riferisce al rilascio del codice in produzione non appena è pronto.
 
+La consegna continua comprende tre fasi principali: integrazione (CI) che include build e test, deployment (CD) che comprende deploy e test di integrazione, e infine delivery che estende il processo fino alla produzione.
+
 Un principio fondamentale nel DevOps è la responsabilità: che il codice passi i test, venga deployato e rimanga funzionante per gli utenti è responsabilità dello sviluppatore, non di qualcun altro.
 
-## Git
+## 2.1 - Git
 
 ### Scenari Problematici senza Controllo Versione
 

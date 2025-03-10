@@ -266,13 +266,11 @@ Il documento mostra un esempio di Dockerfile complesso per un'applicazione big d
 - Necessita di orchestrazione dei container (Kubernetes)
 - Google ha introdotto i container più di 10 anni fa
 
-## Architetture Serverless
+## 1.9 - Architetture Serverless
 
 ### Definizione
 
 Il serverless computing (noto anche come Functions as a Service) è una nuova astrazione del cloud computing che semplifica la scrittura di servizi web robusti e di larga scala. I programmatori scrivono funzioni serverless che rispondono a eventi esterni.
-
-### Caratteristiche Chiave
 
 - **Allocazione automatica**: la piattaforma alloca automaticamente hardware aggiuntivo e gestisce il bilanciamento del carico quando la domanda aumenta
 - **Deallocazione automatica**: le risorse inattive vengono silenziosamente deallocate quando la domanda diminuisce
@@ -290,18 +288,8 @@ Il serverless computing (noto anche come Functions as a Service) è una nuova as
 - **Tolleranza ai guasti implicita**: gestione automatica degli errori
 - **Nessun server da gestire**: astrazione completa dell'infrastruttura
 
-### Controllo dello Sviluppatore e Serverless Computing
+Tuttavia le serverless function introduciunonouna latenza che in sistemi real o semi-real time puo provocare la rottura del sistema.
 
-Il documento mostra come il serverless computing rappresenti un'evoluzione verso maggiore astrazione e minore controllo diretto sull'infrastruttura.
-
-### Architettura della Piattaforma Serverless
-
-Il documento presenta una visione dell'architettura serverless che include:
-- Event sources
-- Function instances
-- State management
-- Security controls
-- Logging & monitoring
 
 ### Caratteristiche delle Piattaforme Serverless
 
