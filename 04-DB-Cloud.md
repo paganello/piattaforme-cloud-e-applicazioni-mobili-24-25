@@ -1,8 +1,5 @@
 # Tecnologie Cloud & Mobile: Data in the Cloud
 
-*Corso 21069 - Piattaforme Mobile & Cloud*  
-*Docente: Mauro Pelucchi (mauro.pelucchi@gmail.com)*
-
 ## 4.0 - Introduzione ai Database nel Cloud
 
 L'integrazione dei database nel paradigma cloud rappresenta uno dei più significativi cambiamenti nell'architettura dei sistemi informativi moderni. Prima di addentrarci nelle specifiche tecnologie, è importante chiarire la distinzione fondamentale tra database e DBMS (Database Management System): mentre il database è la collezione di dati strutturati, il DBMS è il software che gestisce l'accesso, l'organizzazione e la manipolazione di tali dati.

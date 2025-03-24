@@ -1,16 +1,9 @@
 # Cloud Systems and Infrastructure
 
-## 1.0 - Introduzione alle Tecnologie Cloud e Mobile
 
-Il documento presenta un corso su "Tecnologie Cloud e Mobile" tenuto dal Professor Mauro Pelucchi. Il corso si concentra su quattro aree principali:
-- Cloud computing
-- AWS (Amazon Web Services)
-- Micro-servizi
-- Architetture server-less
+## 1.0 - Cloud Computing
 
-## 1.1 - Cloud Computing
-
-### Evoluzione dei Paradigmi di Computing
+#### Evoluzione dei Paradigmi di Computing
 
 La storia dell'informatica ha visto diversi paradigmi di computing:
 
@@ -22,14 +15,14 @@ La storia dell'informatica ha visto diversi paradigmi di computing:
 
 AWS fa da padrona del mondo cloud anche perche è stata colei che è arrivata per prima. AWS nasce nel 2008 dalla necessità di Amazon di efficentare i propri processi IT, hanno quindi esportato questa pratica istituendo AWS.
 
-### Virtualizzazione: Fondamento del Cloud Computing
+#### Virtualizzazione: Fondamento del Cloud Computing
 
 La virtualizzazione rappresenta il primo passo fondamentale verso il cloud computing. Essa ci permette di astrarre dalla singola macchina, permettendo la realizzazione di diverse istanze.
 - **Definizione**: Processo attraverso cui si scompone un grande server fisico in più server virtuali indipendenti.
 - **Caratteristiche**: Ogni server virtuale è dedicato a uno specifico componente isolato.
 - **Approccio**: Astrazione di servizi IT dove poche grandi macchine fisiche ospitano numerose macchine virtuali indipendenti, ciascuna con il proprio sistema operativo e applicazioni.
 
-### Caratteristiche Fondamentali del Cloud Computing
+#### Caratteristiche Fondamentali del Cloud Computing
 
 Il documento identifica 5 caratteristiche essenziali:
 1. **Servizi su richiesta**: Disponibilità immediata in base alle necessità
@@ -40,7 +33,7 @@ Il documento identifica 5 caratteristiche essenziali:
 
 Tuttavia il diver principale che muove le aziende verso il cloud è la semplicità di gestione che porta con se.
 
-### Benefici e Sfide del Cloud Computing
+#### Benefici e Sfide del Cloud Computing
 
 **Benefici**:
 - Pay per Use (pagamento in base all'uso)
@@ -61,17 +54,17 @@ Tuttavia il diver principale che muove le aziende verso il cloud è la semplicit
 
 ## 1.2 - Modelli di Servizio Cloud
 
-### 1. SaaS (Software as a Service)
+#### SaaS (Software as a Service)
 - Il cliente utilizza applicazioni su un'infrastruttura accessibile tramite vari dispositivi client
 - Accesso tramite API, interfacce web o client dedicati
 - Esempi: Gmail, Office 365
 
-### 2. PaaS (Platform as a Service)
+#### PaaS (Platform as a Service)
 - Permette di sviluppare e distribuire applicazioni utilizzando linguaggi di programmazione supportati dal fornitore
 - L'infrastruttura sottostante è gestita dal provider
 - Esempi: Google App Engine, Heroku
 
-### 3. IaaS (Infrastructure as a Service)
+#### IaaS (Infrastructure as a Service)
 - Noleggio di capacità di CPU, storage, network e altre risorse
 - Include sistemi operativi e applicazioni di base
 - Il cliente ha controllo sui sistemi operativi, storage e applicazioni
@@ -89,7 +82,6 @@ Altri tipi di servizi (aaS):
 
 ## 1.3 - Modelli di Deployment Cloud
 
-### Tipologie di Cloud
 
 1. **Private Cloud**:
    - Custom Private Cloud
@@ -106,7 +98,7 @@ Altri tipi di servizi (aaS):
 
 ## 1.4 - Considerazioni sui Costi del Cloud
 
-### Modelli di Pricing
+#### Modelli di Pricing
 
 
 - **Base Cost estimation**: Evoluzione del modello tradizionale, divido per tipo di costo. Non risco ad applicarlo su un cloud pubblico.
@@ -115,7 +107,7 @@ Altri tipi di servizi (aaS):
 
 Posso utilizzare gli stumenti messi a disposizione dalla piattaforma cloud stessa.
 
-### Esempio di Modello di Costo Semplice
+#### Esempio di Modello di Costo Semplice
 
 Facciamo ora un esempio di costi in cloud:
 - Database Server (NoSQL): 24 ore al giorno, tipo m5.2xlarge = $3,500/anno
@@ -123,7 +115,7 @@ Facciamo ora un esempio di costi in cloud:
 - Presentation: 10 ore al giorno, tipo m5.4xlarge = $2,900/anno
 - **Totale annuale**: $9,300 (solo costi EC2!)
 
-### Strategie per Risparmiare
+#### Strategie per Risparmiare
 
 Per ottimizzare i costi nel cloud, il documento suggerisce di sfruttare i vantaggi intrinseci del cloud:
 
@@ -151,8 +143,6 @@ Per ottimizzare i costi nel cloud, il documento suggerisce di sfruttare i vantag
 ## 1.6 - AWS (Amazon Web Services)
 
 Amazon Web Services è una piattaforma di servizi cloud sicura che offre potenza di elaborazione, storage di database, distribuzione di contenuti e altre funzionalità per aiutare le imprese a ricalibrare le proprie risorse e crescere.
-
-### Struttura Geografica di AWS
 
 1. **Region**:
    - Collezioni indipendenti di risorse AWS in una geografia definita
@@ -197,19 +187,9 @@ I micro-servizi emergono come risposta a sfide di:
 - Aggiornamenti
 - Onboarding
 
-### Definizione di Micro-servizi
-
 Secondo James Lewis e Martin Fowler:
 "Scomposizione funzionale del sistema in componenti gestibili e implementabili in modo indipendente". 
 Scompongo i sistemi complessi e monolitici in componenti fanno cose completamente differenti e separate, il fatto che siano cose scomposte mi permette di implementare solo cio che mi serve veramente. cio mi permette anche di creare le componenti in linguaggi di programmazione differenti, che siano piu addatti a cio che la componente dovrà fare.
-
-
-### Caratteristiche dei Micro-servizi
-
-1. **Componentizzazione tramite servizi**: suddivisione in componenti indipendenti
-2. **Prodotti, non progetti**: focus su prodotti completi
-3. **Organizzazione attorno alle capacità di business**: allineamento con le esigenze aziendali
-4. **Decentralizzazione**: distribuzione della responsabilità
 
 
 ## 1.8 - Docker
@@ -218,57 +198,17 @@ Soluzione al problema del "run anywhere" (esecuzione ovunque) utilizzando contai
 
 Il problema della differenza tra ambienti di sviluppo e produzione, può causare conflitti di dipendenze e versioni. Docker risolve questo problema incapsulando applicazioni e dipendenze in container isolati.
 
-### Vantaggi di Docker
+#### Vantaggi di Docker
 
 1. **Efficienza**: i container condividono il kernel OS, sono più leggeri delle VM
 2. **Portabilità**: eliminazione della "matrix from hell" di compatibilità
 3. **Flessibilità**: capacità di costruire, distribuire ed eseguire qualsiasi app ovunque
 4. **Sicurezza**: isolamento tra container e host
 
-### Docker: Immagini e Container
-
-- **Immagine**: file inerte, immutabile, essenzialmente uno snapshot di un container
-- **Container**: istanza in esecuzione di un'immagine Docker
-
-### Gestione delle Immagini
-- **Docker Hub**: repository pubblico di immagini
-- **Immagini private**: create tramite Dockerfile
-- **Registri privati**: per conservare immagini aziendali
-
-### Workflow Docker
-
-1. Scrivere un Dockerfile
-2. Effettuare il build dell'immagine
-3. Avviare il container
-
-### Dockerfile
-
-Il documento mostra un esempio di Dockerfile complesso per un'applicazione big data, illustrando i comandi principali:
-- **FROM**: imposta l'immagine base
-- **ENV**: imposta variabili d'ambiente
-- **RUN**: esegue comandi nell'immagine
-- **ADD**: aggiunge file dall'host/URL al container
-- **VOLUME**: specifica directory esterne al file system
-- **EXPOSE**: specifica le porte da aprire
-- **CMD**: comando predefinito all'esecuzione
-
-### Comandi Docker Base
-
-- **docker ps**: mostra l'elenco dei container attivi
-- **docker stop**: ferma un container
-- **docker rm**: rimuove un container
-- **docker run**: avvia un container
-
-### Recap Docker
-
-- Docker permette di costruire sistemi modulari e portabili
-- Può essere distribuito ovunque: on premises o in cloud
-- Necessita di orchestrazione dei container (Kubernetes)
-- Google ha introdotto i container più di 10 anni fa
 
 ## 1.9 - Architetture Serverless
 
-### Definizione
+#### Definizione
 
 Il serverless computing (noto anche come Functions as a Service) è una nuova astrazione del cloud computing che semplifica la scrittura di servizi web robusti e di larga scala. I programmatori scrivono funzioni serverless che rispondono a eventi esterni.
 
@@ -276,7 +216,7 @@ Il serverless computing (noto anche come Functions as a Service) è una nuova as
 - **Deallocazione automatica**: le risorse inattive vengono silenziosamente deallocate quando la domanda diminuisce
 - **Gestione degli errori**: la piattaforma rileva i guasti e ripete automaticamente le richieste
 
-### Function as a Service
+#### Function as a Service
 
 - **Fatturazione granulare**: i fornitori cloud fatturano solo l'esecuzione effettiva
 - **Modello di programmazione event-driven**: esecuzione in risposta a eventi
@@ -291,7 +231,7 @@ Il serverless computing (noto anche come Functions as a Service) è una nuova as
 Tuttavia le serverless function introduciunonouna latenza che in sistemi real o semi-real time puo provocare la rottura del sistema.
 
 
-### Caratteristiche delle Piattaforme Serverless
+#### Caratteristiche delle Piattaforme Serverless
 
 - **Costo**: generalmente più economico per workload intermittenti
 - **Performance e limiti**: vincoli di esecuzione
@@ -301,11 +241,3 @@ Tuttavia le serverless function introduciunonouna latenza che in sistemi real o 
 - **Deployment**: semplificato
 - **Sicurezza e accounting**: gestione integrata
 - **Monitoraggio e debugging**: strumenti specifici
-
-### Time-to-live vs Scaling
-
-Il documento presenta un grafico che mette in relazione il tempo di vita (asse x) e la facilità di scaling (asse y):
-- **Server-aware compute** (bare metal, VM, IaaS): lungo tempo di vita e più lento a scalare
-- **Serverless compute** (FaaS, MBaaS, PaaS, SaaS): ottimizzato per lavorare su più server e nascondere i dettagli del server
-
-La parte finale del documento accenna brevemente al Service Design, ma non fornisce dettagli specifici su questo argomento.

@@ -1,11 +1,5 @@
 # Tecnologie Cloud & Mobile
 
-## Indice dei Contenuti
-1. [DevOps](#devops)
-2. [Git](#git)
-3. [Metodologia Agile](#metodologia-agile)
-4. [Design as a Service](#design-as-a-service)
-
 ## 2.0 - DevOps
 
 ### Il Problema
