@@ -19,7 +19,7 @@ Si tratta di un framework software open source progettato per l'archiviazione e 
 
 #### HDFS (Hadoop Distributed File System)
 
-HDFS è un file system distribuito ispirato al Google File System. È scalabile, distribuito e portatile, scritto in Java specificamente per il framework Hadoop. Rappresenta l'archiviazione distribuita primaria utilizzata dalle applicazioni Hadoop e può funzionare sia come parte di un cluster Hadoop sia come file system distribuito standalone per uso generale.
+HDFS è un file system distribuito ispirato al Google File System. È scalabile, distribuito e portatile (ma non condiviso), scritto in Java specificamente per il framework Hadoop. Rappresenta l'archiviazione distribuita primaria utilizzata dalle applicazioni Hadoop e può funzionare sia come parte di un cluster Hadoop sia come file system distribuito standalone per uso generale.
 
 In HDFS, ogni file è rappresentato come un insieme non contiguo di blocchi (solitamente da 128 Mbyte) che, a differenza dei file system tradizionali, contengono solo dati RAW senza metadati. L'affidabilità e la tolleranza ai guasti sono garantite dalla replica dei dati su più host, mentre Zookeeper viene utilizzato per il coordinamento distribuito.
 
@@ -35,6 +35,10 @@ MapReduce è un modello di programmazione di alto livello per l'elaborazione di 
 
 YARN è il gestore di risorse del cluster Hadoop che migliora la gestione delle risorse e l'elaborazione dei dati nel framework.
 
+<div align="center">
+  <img src="./images/05-1.png" width="450">
+</div>
+
 #### Hadoop 3
 
 Hadoop 3 introduce importanti miglioramenti:
@@ -48,15 +52,32 @@ Nell'era dei big data, la sfida è processare enormi volumi di dati con costi e 
 
 Spark e Hadoop rispondono alle sfide poste dai grossi volumi di dati, dalla complessità dei sistemi distribuiti, dalle applicazioni complesse (ELT, text mining, modelli predittivi) e dai dati non strutturati.
 
-### Spark
+#### Spark
 
 Apache Spark è un framework open-source per l'elaborazione di grandi volumi di dati (big data) con velocità e semplicità. Sviluppato all'UC Berkeley nel 2010 da Matei Zaharia, estende il modello MapReduce per supportare in modo efficace più tipi di operazioni, query interattive e stream processing.
 
+Essendo che il trend di elaborazione di dati globale è in crescita, ci è sicuramente utile imparare nuovi sistemi per l'elaborazione parallela e distribuita.
+
+<div align="center">
+  <img src="./images/05-2.png" width="450">
+</div>
+
+#### Applicazione
+
 Scritto in Scala e compatibile con Hadoop, Spark offre API per Java, Scala e Python. È caratterizzato da un modello di programmazione ad alto livello, semplice e funzionale, ed è particolarmente veloce grazie al caching in memoria e alle ottimizzazioni delle query. General purpose, è ideale per ETL, machine learning e dati non strutturati.
+
+La differenza principale è che Hadoop ha come obbiettivo quello di eseguire algoritmi complessi e personalizzati su una grandi moli di dati, mentre Spark ha come obbiettivo l'elaborazione di questi dati.
+Spark è per dataprocessing, non va bene per esegure elaborazione real-time.
+
+<div align="center">
+  <img src="./images/05-3.png" width="450">
+</div>
 
 Rispetto a Hadoop MapReduce, Spark supporta molte tipologie di task come interrogazioni SQL, applicazioni streaming, machine learning e graph operations. Offre pattern generalizzati (stesso framework per molti casi d'uso), valutazione lazy (riduce gli stati di attesa, migliora il pipelining) e programmazione funzionale (rende più facile scrivere e mantenere applicazioni complesse).
 
-### Lo stack Spark
+Utilizzare spark mi permette di utilizzari linguaggi e motodi gia pronti per operare sui dati, come le gia citate query SQL sui dati di Spark.
+
+#### Lo Stack
 
 Lo stack Spark è composto da:
 - Spark Core
@@ -67,13 +88,17 @@ Lo stack Spark è composto da:
 
 Il tutto funziona su uno scheduler standalone o su Hadoop/YARN o Mesos.
 
-### Funzionamento di Spark
+#### Funzionamento di Spark
+
+Implementa una approccio lazy evaluation e funcional programming, questo con lo scopo di ridurre i carichi e quindi i tempi, mantenedo un approccio a flusso piu facile da mantenere grazie ad una piu bassa complessità di scittura dei job.
+
+La valutazione lazy in Spark presenta numerosi vantaggi. Permette di avere una "big picture" del processo, vedendo più alternative, e di non eseguire operazioni non necessarie. Ad esempio, quando si prendono solo le prime 5 righe di un dataset unito, Spark non calcola l'intera unione ma prepara solo i primi 5 elementi della collezione.
 
 In Spark, il driver program comunica con il cluster manager per richiedere risorse e avviare gli executor. Gli executor eseguono i task inviati dal driver sulla base delle azioni e trasformazioni richieste dal job dell'utente. Al termine dell'esecuzione, vengono rilasciate le risorse.
 
-### SparkContext
-
-SparkContext è il punto di accesso per le API di Spark. Ogni applicazione deve inizializzare uno SparkContext che contiene tutte le informazioni e la configurazione necessarie: accesso al cluster, parametri di connessione con il data warehouse, parametri dell'applicazione e parametri per Spark.
+<div align="center">
+  <img src="./images/05-4.png" width="450">
+</div>
 
 ### RDD (Resilient Distributed Datasets)
 
@@ -93,11 +118,8 @@ Le trasformazioni in Spark creano un nuovo dataset da uno esistente. Sono lazy, 
 
 Le azioni indicano che qualcosa deve essere effettuato e vengono eseguite immediatamente da Spark, producendo un risultato. Esempi di azioni sono reduce, count, saveAsTextFile, first, collect e take.
 
-### Lazy Evaluation
 
-La valutazione lazy in Spark presenta numerosi vantaggi. Permette di avere una "big picture" del processo, vedendo più alternative, e di non eseguire operazioni non necessarie. Ad esempio, quando si prendono solo le prime 5 righe di un dataset unito, Spark non calcola l'intera unione ma prepara solo i primi 5 elementi della collezione.
-
-## Spark SQL
+## 5.3 - Spark SQL
 
 Spark SQL è un modulo per l'elaborazione di dati relazionali in Spark. Offre un'interfaccia SQL-like (HIVE over Spark) ed è fino a 100 volte più veloce per dati in memoria e 5-10 volte più veloce per dati su disco.
 
