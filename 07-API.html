@@ -1,0 +1,258 @@
+<!DOCTYPE html><html><head>
+      <title>07-API</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\thoma\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.18\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="tecnologie-cloud--mobile-building-server-less-applications">Tecnologie Cloud &amp; Mobile: Building Server-less Applications </h1>
+<p>Presentazione di Mauro Pelucchi (<a href="mailto:mauro.pelucchi@gmail.com">mauro.pelucchi@gmail.com</a>) - Università degli Studi di Bergamo - Corso 21069 - Piattaforme cloud e mobile.</p>
+<h2 id="71---argomenti-trattati">7.1 - Argomenti Trattati </h2>
+<p>Il documento introduce i seguenti argomenti principali relativi alle tecnologie cloud e mobile, con un focus sulla creazione di applicazioni serverless:</p>
+<ul>
+<li>Function as a Service (FaaS)</li>
+<li>API (Application Programming Interfaces)</li>
+<li>AWS Lambda Function &amp; AWS API Gateway</li>
+<li>Cenni su Node.js come tecnologia abilitante per alcuni scenari serverless/backend.</li>
+</ul>
+<h2 id="72---la-sfida-della-delivery-del-software">7.2 - La Sfida della Delivery del Software </h2>
+<p>Le aziende moderne si trovano di fronte alla sfida di bilanciare la stabilità delle loro operazioni con la necessità di sviluppare e rilasciare rapidamente nuove funzionalità software. L'obiettivo ideale è quello di poter consegnare software con "tolleranza zero" per le interruzioni (zero tolerance for outages), garantendo al contempo che il processo sia:</p>
+<ul>
+<li><strong>Rapido (Quickly):</strong> Per rispondere velocemente alle esigenze del mercato.</li>
+<li><strong>Sicuro (Securely):</strong> Per proteggere dati e sistemi.</li>
+<li><strong>Affidabile (Reliably):</strong> Per garantire la continuità del servizio.</li>
+</ul>
+<h2 id="73---ciclo-di-vita-dello-sviluppo-dei-sistemi-sdlc">7.3 - Ciclo di Vita dello Sviluppo dei Sistemi (SDLC) </h2>
+<p>Viene presentato un modello standard del ciclo di vita dello sviluppo dei sistemi (Systems Development Lifecycle - SDLC). Questo ciclo articola il processo di creazione e manutenzione del software in fasi distinte:</p>
+<ol>
+<li><strong>Plan (Pianificazione):</strong> Definizione degli obiettivi e dell'ambito.</li>
+<li><strong>Define (Definizione):</strong> Analisi dettagliata dei requisiti.</li>
+<li><strong>Design (Progettazione):</strong> Progettazione dell'architettura e delle componenti del sistema.</li>
+<li><strong>Develop (Sviluppo):</strong> Scrittura del codice, installazione di componenti e programmi, formazione degli utenti, test delle performance e aggiustamenti.</li>
+<li><strong>Deploy (Distribuzione):</strong> Rilascio del software nell'ambiente di produzione.</li>
+<li><strong>Maintain (Manutenzione):</strong> Monitoraggio, correzione di bug e aggiornamenti post-rilascio.</li>
+</ol>
+<h2 id="74---metodologie-sdlc-waterfall-vs-agile">7.4 - Metodologie SDLC: Waterfall vs Agile </h2>
+<p>Si confrontano due approcci principali alla gestione dell'SDLC:</p>
+<ul>
+<li><strong>Waterfall:</strong> Un modello sequenziale e lineare dove ogni fase deve essere completata prima di iniziare la successiva (Plan -&gt; Define -&gt; Design -&gt; Develop -&gt; Deploy -&gt; Maintain). È rigido e poco adatto a cambiamenti in corso d'opera.</li>
+<li><strong>Agile:</strong> Un modello iterativo e incrementale. Il lavoro è organizzato in cicli brevi chiamati "Sprint", ognuno dei quali attraversa tutte le fasi (Plan, Define, Design, Develop, Deploy, Maintain a livello di sprint). Questo permette maggiore flessibilità e adattabilità ai requisiti che cambiano.</li>
+</ul>
+<h2 id="75---fasi-principali-dello-sviluppo-software-moderno">7.5 - Fasi Principali dello Sviluppo Software Moderno </h2>
+<p>Le fasi generali dell'SDLC vengono ulteriormente dettagliate in attività più specifiche, tipiche dei processi di sviluppo moderni, spesso automatizzate tramite pipeline CI/CD (Continuous Integration/Continuous Deployment):</p>
+<ul>
+<li><strong>Code:</strong> Scrittura del codice sorgente (es. file <code>.java</code>), check-in nel sistema di version control, peer review del nuovo codice.</li>
+<li><strong>Build:</strong> Compilazione del codice, esecuzione di test unitari, esecuzione di controlli di stile (style checkers), raccolta di metriche sul codice, creazione di artefatti distribuibili (es. immagini container).</li>
+<li><strong>Test:</strong> Esecuzione di test di integrazione con altri sistemi, test di carico (load tests), test dell'interfaccia utente (UI), test di penetrazione (penetration tests) per la sicurezza.</li>
+<li><strong>Deploy:</strong> Distribuzione del codice negli ambienti di produzione.</li>
+<li><strong>Maintain:</strong> Monitoraggio continuo del codice in produzione per rilevare rapidamente comportamenti anomali o errori.</li>
+</ul>
+<h2 id="76---function-as-a-service-faas">7.6 - Function as a Service (FaaS) </h2>
+<p>Questa sezione introduce il concetto di FaaS come evoluzione dei modelli cloud.</p>
+<p><strong>Contesto Cloud (IaaS, PaaS, SaaS):</strong><br>
+Si richiama la classica stratificazione dei servizi cloud:</p>
+<ul>
+<li><strong>IaaS (Infrastructure as a Service):</strong> Fornisce risorse computazionali di base (VM, storage, network). Tipicamente per Network Architects.</li>
+<li><strong>PaaS (Platform as a Service):</strong> Offre una piattaforma per sviluppare, eseguire e gestire applicazioni senza gestire l'infrastruttura sottostante. Per Application Developers.</li>
+<li><strong>SaaS (Software as a Service):</strong> Fornisce software pronto all'uso via web. Per End Users.<br>
+La visibilità e il controllo sull'infrastruttura diminuiscono salendo da IaaS a SaaS.</li>
+</ul>
+<p><strong>Oltre IaaS/PaaS/SaaS:</strong><br>
+Ci si chiede se serva qualcos'altro. Emergono esigenze legate a sicurezza, scalabilità (up/down), gestione dei server e delle dipendenze, spesso affrontate con l'uso di <strong>Containers</strong>. I container e i relativi orchestratori (es. Kubernetes) si collocano sopra l'IaaS e a volte in parallelo/integrati col PaaS.</p>
+<p><strong>Dalle Applicazioni Monolitiche alle Funzioni:</strong><br>
+L'idea alla base di FaaS è spingere ulteriormente la granularità delle applicazioni. Si passa da:</p>
+<ol>
+<li><strong>Applicazione Monolitica:</strong> Un unico blocco di codice.</li>
+<li><strong>Microservizi:</strong> Applicazione scomposta in servizi più piccoli e indipendenti.</li>
+<li><strong>Functions (FaaS):</strong> Applicazione scomposta a livello di singole funzioni, spesso attivate da eventi.</li>
+</ol>
+<p><strong>Definizione di FaaS:</strong><br>
+FaaS è la capacità di eseguire una funzione specifica nel cloud senza doversi preoccupare della gestione dei server sottostanti. È una forma di <strong>serverless computing</strong> in cui si esegue codice in un ambiente astratto, tipicamente in risposta a eventi. Lo sviluppatore si concentra solo sul codice ("Just code to develop and execute"). FaaS si posiziona come un livello di astrazione ancora superiore rispetto a PaaS e Container Orchestrators.</p>
+<p><strong>Livelli di Astrazione (Riepilogo):</strong><br>
+L'evoluzione dell'astrazione procede da: Bare Metal -&gt; Virtual machines -&gt; Containers -&gt; Functions (FaaS). Salendo, aumenta il focus sulla logica di business e diminuisce la preoccupazione (e il controllo) sull'infrastruttura. L'evoluzione architetturale va da Servizi monolitici (autonomi, loosely-coupled) a Microservizi (single purpose, stateless, scalabili, automatizzati) fino a Functions (single action, effimere).</p>
+<h2 id="77---serverless-computing">7.7 - Serverless Computing </h2>
+<p>Il Serverless Computing rappresenta un paradigma in cui il cloud provider gestisce dinamicamente l'allocazione e il provisioning dei server.</p>
+<p><strong>Confronto tra Modelli:</strong></p>
+<ul>
+<li><strong>On-premises:</strong> Alti costi iniziali, capacità fissa, deployment lenti, manutenzione onerosa.</li>
+<li><strong>Virtual servers (IaaS):</strong> Indipendenza hardware, scalabilità elastica, provisioning rapido, manutenzione ridotta.</li>
+<li><strong>Containers:</strong> Indipendenza piattaforma, alta utilizzazione risorse, deployment rapidi, isolamento.</li>
+<li><strong>Serverless (FaaS):</strong> Nessun OS da gestire, scaling flessibile automatico, pay-per-use, fault tolerance integrata, zero manutenzione infrastruttura.<br>
+Il livello di astrazione cresce, permettendo di focalizzarsi sempre più sulla <strong>logica di business</strong>.</li>
+</ul>
+<p><strong>Costruire Applicazioni Serverless Moderne:</strong><br>
+Si basano su:</p>
+<ul>
+<li><strong>Piccoli pezzi, debolmente accoppiati:</strong> Funzioni/microservizi indipendenti.</li>
+<li><strong>Data store specifici:</strong> Uso del DB più adatto allo scopo (NoSQL, relazionale...).</li>
+<li><strong>Servizi specializzati per integrazione:</strong> Code, notifiche, orchestrazione.</li>
+<li><strong>Automazione tramite codice:</strong> Infrastructure as Code (IaC), CI/CD.<br>
+Questo porta a pattern serverless compute event-driven, data store serverless, servizi gestiti e framework di deployment.</li>
+</ul>
+<p><strong>Caratteristiche Chiave (Serverless/FaaS):</strong></p>
+<ul>
+<li>Focus sviluppatori sul codice, non sulle operation.</li>
+<li>Architettura Reattiva (event-driven).</li>
+<li>Poliglotta (linguaggi diversi per funzioni diverse: Node.js, Java, Python...).</li>
+<li>Stateless (lo stato va gestito esternamente).</li>
+<li>Task-focused (ogni funzione fa una cosa specifica).</li>
+<li>Event-triggered (attivate da eventi).</li>
+<li>Esposte come API REST, ricevono eventi JSON.</li>
+<li>Utility billing (pagamento solo per l'uso effettivo).</li>
+</ul>
+<p><strong>Vantaggi e Svantaggi (Good vs Bad):</strong></p>
+<ul>
+<li><strong>Vantaggi:</strong> Alta concorrenza, aggiornamenti facili, alta utilizzazione, scalabilità, pricing granulare, separazione app/infra, poliglotta, sicurezza parzialmente gestita dal provider, focus singolo.</li>
+<li><strong>Svantaggi:</strong> Paradigma diverso, possibile assenza di framework noti, latenza potenziale (cold start) e variabile, statelessness richiede design apposito, poco tempo per ottimizzazione runtime, limiti risorse provider, pricing a volte complesso.</li>
+</ul>
+<p><strong>Architettura FaaS (Concetti Base):</strong><br>
+Un flusso tipico FaaS prevede: Edge (UI, API Gateway, sorgenti eventi) -&gt; Event Queue -&gt; Dispatcher -&gt; Master/Worker (dove gira il codice della funzione).</p>
+<p><strong>Esempio AWS Lambda (S3 Trigger):</strong></p>
+<ol>
+<li>Upload codice su Lambda.</li>
+<li>Configurazione trigger (es. upload file su S3).</li>
+<li>Lambda esegue il codice solo quando scatta il trigger.</li>
+<li>Pagamento per il tempo di calcolo.<br>
+<em>Caso d'uso:</em> Upload foto su S3 -&gt; Lambda la ridimensiona per web/mobile.</li>
+</ol>
+<p><strong>Piattaforme FaaS/Serverless:</strong><br>
+Vengono mostrati loghi di varie soluzioni: AWS Lambda, Azure Functions, Google Cloud Functions, Serverless Framework, Apache OpenWhisk, ecc.</p>
+<h2 id="78---aws-lambda-function">7.8 - AWS Lambda Function </h2>
+<p>Questa sezione approfondisce AWS Lambda, l'implementazione FaaS di Amazon.</p>
+<p><strong>Cos'è una Lambda?</strong></p>
+<ul>
+<li>Servizio FaaS.</li>
+<li>Pagamento per invocazione/tempo.</li>
+<li>Auto-scaling "infinito".</li>
+<li>Focus sul business logic.</li>
+<li>Zero amministrazione server.<br>
+Una funzione Lambda è composta da: <strong>Codice</strong>, <strong>Dipendenze</strong> (librerie, binari) e <strong>Configurazione</strong> (memoria, timeout, trigger, ecc.).</li>
+</ul>
+<p><strong>Come Funziona:</strong><br>
+Si basa su: Authoring (scrittura codice), Statelessness, Deployment, Monitoring &amp; Logging.</p>
+<p><strong>Casi d'Uso Comuni:</strong><br>
+Web Applications, Backends (mobile, IoT), Data Processing (real-time, batch), Chatbots, Amazon Alexa Skills, Autonomous IT (policy, gestione infra).</p>
+<p><strong>Modelli di Invocazione (Push/Pull):</strong></p>
+<ul>
+<li><strong>Push:</strong> Servizi AWS (S3, API Gateway) invocano Lambda direttamente.</li>
+<li><strong>Pull (Polling):</strong> Lambda legge eventi da code/stream (SQS, Kinesis, DynamoDB Streams) e si auto-invoca.</li>
+</ul>
+<p><strong>Modelli di Esecuzione:</strong></p>
+<ul>
+<li><strong>Synchronous (push):</strong> L'invoker attende la risposta (es. API Gateway -&gt; Lambda -&gt; risposta HTTP).</li>
+<li><strong>Asynchronous (event):</strong> L'invoker invia l'evento e non attende (es. S3 -&gt; Lambda).</li>
+<li><strong>Stream-based (poll):</strong> Lambda processa record da stream (es. Kinesis -&gt; Lambda).</li>
+</ul>
+<p><strong>Anatomia di una Funzione Lambda (Node.js):</strong><br>
+Il codice tipicamente esporta una funzione <strong>handler</strong> che riceve tre argomenti:</p>
+<ul>
+<li><code>event</code>: Oggetto con i dati di input (trigger payload).</li>
+<li><code>context</code>: Oggetto con metadati sull'esecuzione (ID richiesta, tempo rimanente, ecc.).</li>
+<li><code>callback</code>: Funzione (legacy in Node.js) per restituire il risultato o un errore.</li>
+</ul>
+<p><strong>Building Blocks Serverless su AWS:</strong><br>
+Le app serverless combinano vari servizi AWS:</p>
+<ul>
+<li><strong>Compute:</strong> Lambda</li>
+<li><strong>Storage:</strong> S3, DynamoDB</li>
+<li><strong>Database:</strong> DynamoDB</li>
+<li><strong>API Proxy:</strong> API Gateway</li>
+<li><strong>Messaging/Queues:</strong> SQS, SNS</li>
+<li><strong>Analytics:</strong> Kinesis</li>
+<li><strong>Orchestration:</strong> Step Functions</li>
+<li><strong>Monitoring:</strong> X-Ray, CloudWatch</li>
+</ul>
+<h2 id="79---api-application-programming-interface">7.9 - API (Application Programming Interface) </h2>
+<p>Le API sono strumenti fondamentali per l'interazione tra sistemi software.</p>
+<p><strong>Definizione:</strong> Un'API è uno strumento/interfaccia che permette a computer (o componenti software) di scambiarsi informazioni e richiedere l'esecuzione di funzionalità.</p>
+<p><strong>Importanza delle API:</strong></p>
+<ul>
+<li>Sono interfacce a livello di codice (per librerie, OS, servizi web).</li>
+<li><strong>Valore Aziendale:</strong> Possono essere un asset strategico; richiedono investimento per l'apprendimento da parte degli utenti.</li>
+<li><strong>Stabilità:</strong> Tendono a cambiare lentamente, con mantenimento di versioni precedenti (a differenza dei siti web).</li>
+<li><strong>API Pubbliche:</strong> Abilitano ecosistemi e integrazioni di terze parti.</li>
+</ul>
+<p><strong>Caratteristiche di una "Good API":</strong></p>
+<ul>
+<li><strong>Per l'utente:</strong> Facile da usare, facile da imparare, soddisfa i requisiti.</li>
+<li><strong>Per lo sviluppatore:</strong> Facile da manutenere, facile da estendere.</li>
+</ul>
+<p><strong>Design di API:</strong></p>
+<ul>
+<li>Raccogliere i veri requisiti (non soluzioni preconcette).</li>
+<li>Definire scenari d'uso.</li>
+<li>Creare specifiche brevi.</li>
+<li>Considerare: Interfacce (semplici, generali, prevedibili, robuste), Gestione Risorse (file, memoria), Gestione Errori (fail fast).</li>
+</ul>
+<p><strong>Utilizzo di un'API:</strong><br>
+Un client invia una richiesta (es. HTTP) a un API provider, che processa la richiesta (eventualmente interagendo con storage/servizi) e restituisce una risposta. Spesso richiede autenticazione/autorizzazione (es. API key, contratti).</p>
+<h2 id="710---esempi-di-api">7.10 - Esempi di API </h2>
+<p>Vengono illustrati alcuni esempi concreti:</p>
+<ul>
+<li><strong>Clarifai API:</strong> Per riconoscimento immagini/video. Si invia un input (immagine/video) e si ricevono predizioni (tag, concetti). Offre piani tariffari diversi, incluso uno gratuito. Le risposte sono tipicamente in JSON.</li>
+<li><strong>Geocoding API (Mapquest, Google):</strong> Trasformano indirizzi fisici in coordinate geografiche (lat/lon) e viceversa. MapQuest fornisce un portale per sviluppatori con documentazione, chiavi API ed esempi (JS, Python) per usare i suoi servizi, incluso il geocoding.</li>
+<li><strong>OpenAI API:</strong> Fornisce accesso a modelli AI avanzati (GPT-4, ecc.) per text generation, NLP, computer vision. Esempi mostrano come usarla via codice (JS, Python) per generare testo da prompt o ottenere output strutturato (JSON).</li>
+<li><strong>OpenAI API con LlamaIndex:</strong> LlamaIndex è un framework per costruire agenti LLM-powered e applicazioni RAG (Retrieval-Augmented Generation) che interagiscono con dati esterni (documenti, API). Permette di creare assistenti più sofisticati usando i modelli OpenAI.</li>
+<li><strong>Esempio Pratico (CV Consultant):</strong> Viene mostrata un'applicazione web (GitHub: mauropelucchi/cv-consultant) costruita con Streamlit, OpenAI e LlamaIndex. L'app prende in input un CV (PDF), lo indicizza, e permette all'utente di interagire con un assistente AI (basato su GPT-4o e LlamaIndex) per ricevere consigli personalizzati su come migliorare il CV o generare contenuti derivati come una bio professionale.</li>
+</ul>
+<h2 id="711---nodejs">7.11 - Node.js </h2>
+<p>Node.js è un ambiente di runtime per eseguire JavaScript lato server.</p>
+<p><strong>Caratteristiche Principali:</strong></p>
+<ul>
+<li>Permette di usare JavaScript per il backend.</li>
+<li>Basato sul motore V8 di Chrome.</li>
+<li>Leggero ed efficiente.</li>
+<li><strong>Event-Driven, Non-Blocking I/O:</strong> Modello a singolo thread (event loop) che gestisce molte connessioni concorrenti senza bloccarsi sulle operazioni di I/O. L'I/O viene delegato e una callback viene eseguita al completamento.</li>
+<li>Altamente Scalabile: Ottimo per applicazioni I/O intensive e ad alta concorrenza.</li>
+</ul>
+<p><strong>Evoluzione di JavaScript:</strong><br>
+DHTML (anni '90) -&gt; jQuery/RIA (anni '00) -&gt; Node.js/Framework Moderni (Angular, React, Vue - anni '10+).</p>
+<p><strong>Synchronous vs Asynchronous:</strong><br>
+Concetto chiave in Node.js. L'approccio asincrono (con callback, Promises, async/await) evita di bloccare l'event loop, garantendo reattività.</p>
+<p><strong>Modello Single Thread Asynchronous I/O:</strong><br>
+L'event loop gestisce le richieste. Le operazioni I/O lunghe vengono eseguite in background. Al completamento, l'evento e la callback associata vengono messi in coda per essere eseguiti dall'event loop.</p>
+<p><strong>Non-Blocking I/O:</strong><br>
+Si usano eventi e callback per non attendere il completamento dell'I/O. Il codice continua l'esecuzione mentre l'I/O è in corso.</p>
+<p><strong>Quando Usare Node.js:</strong><br>
+Ideale per applicazioni con poche operazioni CPU-intensive ma molte operazioni I/O: web server, API, chat, app real-time, microservizi, applicazioni ad alta concorrenza.</p>
+<p><strong>Comandi Base:</strong></p>
+<ul>
+<li><code>node</code>: Avvia REPL.</li>
+<li><code>node script.js</code>: Esegue script.</li>
+<li><code>node -v</code>: Versione Node.</li>
+<li><code>npm</code>: Gestore pacchetti.</li>
+<li><code>npm -v</code>: Versione npm.</li>
+</ul>
+<p><strong>Moduli Popolari:</strong><br>
+Express (web framework), <a href="http://socket.io">socket.io</a> (real-time), Mongoose (MongoDB ODM), Pug/Jade (template engine), restify (API REST framework).</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
